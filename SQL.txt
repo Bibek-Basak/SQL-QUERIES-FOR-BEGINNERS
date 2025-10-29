@@ -38,3 +38,27 @@ SELECT * FROM Student WHERE FIRST_NAME IN ('Prem', 'Shivansh');
 10. Write a SQL query to print details of the Students excluding FIRST_NAME as 'Prem' and 'Shivansh' from Student table.
 
 SELECT * FROM Student WHERE FIRST_NAME NOT IN ('Prem', 'Shivansh');
+
+11. Write a SQL query to print details of the Students whose FIRST_NAME ends with 'a'.
+
+SELECT * FROM Student WHERE FIRST_NAME LIKE '%a';
+
+12. Write an SQL query to print details of the Students whose FIRST_NAME ends with ‘a’ and contains five alphabets.
+
+SELECT * FROM Student WHERE FIRST_NAME LIKE '____a';
+
+13. Write an SQL query to print details of the Students whose GPA lies between 9.00 and 9.99.
+
+SELECT * FROM Student WHERE GPA between 9.00 AND 9.99;
+
+14. Write an SQL query to fetch the count of Students having Major Subject ‘Computer Science’.
+
+SELECT MAJOR, COUNT(*) AS TOTAL_COUNT FROM Student WHERE MAJOR = ‘Computer Science’;
+
+15. Write an SQL query to fetch Students full names with GPA >= 8.5 and <= 9.5.
+
+SELECT CONCAT(FIRST_NAME,' ', LAST_NAME) AS FULL_NAME WHERE GPA between 8.5 AND 9.5;
+
+16. Write an SQL query to fetch the no. of Students for each MAJOR subject in the descending order.
+
+SELECT MAJOR, COUNT(MAJOR) FROM Student GROUP BY MAJOR ORDER BY COUNT(MAJOR) DESC;
